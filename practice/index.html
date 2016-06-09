@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>TODO write content</div>
+        <button id="fun1">js简化写法switch</button>
+        <script>
+            //interview in netEasy 
+            //blur、focus、load和unload不能像其它事件一样冒泡。
+            //-------------------------------
+            
+            var foo = function (){
+                var arrs = [];
+                for(var i=0;i<3;i++){
+                    arrs.push(function(){
+                        console.log(i);
+                      return i; 
+                    });
+                }
+                return arrs;
+            };
+            console.log(foo()[0]()+foo()[2]()); //结果为3+3 = 6；
+            //--------------------------------
+            
+            console.log(""||"abc");
+            var a = 2;
+            a>1&&console.log("a>1");
+            a===2||console.log("||a=1");
+            // && 运算符是 条件一判断为错误则停止执行，||运算符为 条件一判断为正确则停止执行
+            //--------------------------------
+            
+            ""||console.log("空字符为false");
+            null||console.log("null为false");
+            //0、""、null、false、undefined、NaN都会判为false，其他都为true
+            //--------------------------------
+            //
+            //假设对成长速度显示规定如下：成长速度为5显示1个箭头；成长速度为10显示2个箭头；成长速度为12显示3个箭头；成长速度为15显示4个箭头；其他都显示都显示0各箭头。用代码怎么实现？
+             document.querySelector("#fun1").onclick=function (){
+                  var num = prompt("输入数量1-5");
+                  //简化写法 利用运算符
+                  var result = num==1&&"一"||num==2&&"二"||num==3&&"三"||num==4&&"四"||num==5&&"五"||"NaN";
+                  //简化写法2 利用{} 与 数组类似的取值特性
+                  var result2 = {"1":"YI","2":"ER","3":"SAN","4":"SI","5":"WU"}[num]||"NaN";
+                  alert(result);
+                  alert(result2);
+             };
+            
+        </script>
+    </body>
+</html>
