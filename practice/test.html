@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../QUnit/qunit-1.23.1.css">
+        <script src="../QUnit/qunit-1.23.1.js"></script>
+        <script src="./js/testQunit.js"></script>
+        <script>
+            window.onload = function () {
+                QUnit.test("test", function (assert) {
+                    var div = document.getElementById('test');
+                    assert.equal(div.innerHTML,"test");
+                    foo(2,div||"");
+                    assert.equal(div.innerHTML, 12);
+                });
+            };
+        </script>
+    </head>
+    <body>
+        <!--        QUnit显示-->
+        <div id="test">test</div>
+        <div id="qunit"></div> 
+    </body>
+</html>
