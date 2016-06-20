@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="../Jquery/jquery.min.js"></script>
+        <script src="../bootstrap/js/bootstrap.min.js"></script>
+        <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <style>
+            div{
+                height: 200px;
+                width: 200px;
+            }
+            
+            .moveOn{
+                background-color: #999999;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div>
+                <div id="div" style="background-color:red"  draggable="true"></div>
+            </div>
+            <div class="moveOn">
+            </div>
+        </div>
+        <script>
+            var div = document.querySelector("div");
+            var moveOn = document.querySelector(".moveOn");
+//            //----------------------------拖动---------------------------
+//            img.addEventListener("dragstart", function (event) {   //开始拖动
+//                console.log(event);
+//            }, false);
+//            img.addEventListener("drag", function (event) {        //拖动中
+//                console.log(event);
+//            }, false);
+//            img.addEventListener("dragend", function (event) {     //拖动结束
+//                console.log(event);
+//            }, false);
+//            //----------------------------拖入---------------------------
+//            moveOn.addEventListener("dragenter", function (event) { //移入此DOM
+//                console.log(event);
+//            }, false);
+//            moveOn.addEventListener("dragover", function (event) {  //此DOM中移动
+//                console.log(event);
+//            }, false);
+//            moveOn.addEventListener("dragleave", function (event) { //离开此DOM
+//                console.log(event);
+//            }, false);
+            div.addEventListener("dragstart", function (ev) {
+                var divID = ev.target.id;
+                ev.dataTransfer.setData("Text", divID);
+            });
+            //绑定drop时间之前需要取消dragenter  dragover的默认事件 ev.preventDefault();
+            moveOn.addEventListener("dragenter",function(ev){
+                ev.preventDefault();
+            });
+            moveOn.addEventListener("dragover",function(ev){
+                ev.preventDefault();
+            });
+            moveOn.addEventListener("drop",function(ev){
+                var divID = ev.dataTransfer.getData("Text");
+                document.getElementById(divID)["style"]["background-color"]="#000";
+                ev.preventDefault();
+            });
+        </script>
+    </body>
+</html>
