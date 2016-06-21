@@ -11,6 +11,7 @@
 (function () {
     var a = 1;
     function b() {
+        
         if (!a) {
             var a = 10;
         }
@@ -22,7 +23,6 @@
         var arrs = [];
         for (var i = 0; i < 3; i++) {
             arrs.push(function () {
-                console.log(i);
                 return i;
             });
         }
