@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>socket.io</title>
+    <script src=".././Jquery/jquery.min.js"></script>
+    <script src="./js/socket.io.js"></script>
+</head>
+<body>
+Incoming Chat:
+<ul></ul>
+<br/>
+<input type="text" />
+<script>
+    $(function () {
+        var iosocket = io.connect('http://192.168.0.196:8888/'),
+                $ul = $("ul"),
+                $input = $("input");
+        iosocket.on('connect', function() {  //接通处理
+            $ul.append($('<li>连上啦</li>'));
+
+            iosocket.on('message', function(message) {  //收到信息处理
+                $ul.append($('<li></li>').text(message));
+            });
+            iosocket.on('disconnect', function() { //断开处理
+                $ul.append('<li>Disconnected</li>');
+            });
+        });
+
+        $input.keypress(function (event) {
+            if (event.which == 13) { //回车
+                event.preventDefault();
+                iosocket.send($input.val());
+                $input.val('');
+            }
+        });
+    });
+</script>
+</body>
+</html>
