@@ -1,0 +1,55 @@
+WEB软件工程思想、可维护性代码约定等
+代码约定：
+    1.可读性：
+        函数方法应包含注释，如参数代表什么，是否有返回值
+        大段代码，段落中不同逻辑前应加注释
+        复杂算法，加入你是如何做的的注释
+    2.变量和函数名：
+        变量名应为名词
+        函数名应以动词开始,如getName()。返回布尔值的一般以is开头
+        命名不要考虑是否太长
+    3.变量类型透明：
+        通过初始化声明变量类型：
+            var found = false;  布尔
+            var count = -1;     数字
+            var  name = "";     字符串
+            var person= null;   对象
+        通过指定数据类型的匈牙利标记法
+            var bFound = false
+            var nCount = -1;
+            var sName  = "";
+            var oPerson= null;
+松散耦合：
+    1.解耦HTML/JavaScript
+        JavaScript用于插入数据时，尽量不要直接插入DOM。一般可以在页面中直接包含并隐藏标记，然后等页面渲染好后通过JavaScript令其显示
+        写方法可预留输入DOM参数。
+    2.解耦CSS/JavaScript
+        通过JavaScript修改CSS的Class 将DOM的样式严格控制在class中
+    3.解耦应用逻辑/事件处理程序
+        监听事件内调用应用逻辑方法。
+编程实践：
+    1.尊重对象所有权
+        不要为不是自己的实例或原型中添加属性
+        不要为不是自己的实例或原型中添加方法
+        不要重定义不是自己的已存在的方法
+    2.避免全局变量
+        可使用一个以本脚本名命名的全局变量包含其他变量
+        test.js
+        var testApplication = {
+          sName:"name";
+          sayHi:function(){}
+        }
+    3.避免与null进行比较
+        使用 values instanceof Array
+    4.提取常量
+        可在工程中使用专有文件保存常量
+        constants.js
+        var sINDEX_PATH = "/practice/js";
+性能：
+    1.注意作用域
+        document是在DOM节点树上遍历，尽量少的使用它，可将其保存到本地变量中
+        var doc = document;
+    2.最小化语句数
+        var nCount = 5;             =>  var nCount=5,sColor ="blue";
+        var sColor = "blue";
+        
