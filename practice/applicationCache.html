@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<!--
+manifest 文件需要配置正确的 MIME-type，即 "text/cache-manifest  appcache"。必须在 web 服务器上进行配置。
+会默认缓存本页面，建议不要在离线缓存页面加载动态数据，可以和iframe搭配使用
+极不适合含有动态参数页面跳转的情况下使用，最好是一个页面，然后完全的ajax请求。
+-->
+<!--
+浏览器与服务器的交互
+      曾经有面试题是这样的："描述在浏览器的地址栏中输入:http://www.baidu.com 后发生了什么？"。
+      1、服务端返回baidu页面资源，浏览器载入html
+      2、浏览器开始解析
+      3、发现link，发送请求载入css文件
+      4、浏览器渲染页面
+      5、发现图片，发送请求载入图片，并重新渲染
+      6、发送请求js文件，阻塞渲染。如果js对dom进行了操作，则会进行rerender
+      对于支持离线存储的页面，浏览器和服务器的交互又是如何呢？
+      首次载入页面：
+      1-6 ： 同上
+       7：请求页面中需要缓存的页面和数据，就算在之前的步骤中已经请求过（这是个耗能的地方）
+       8：服务器返回所有请求文件，浏览器进行本地存储
+      再次载入页面：
+      1：发送请求
+      2：使用本地存储的离线文件
+      3：解析页面
+      4：请求服务端的manifest文件，判断是否有改变，返回304则表示没有改变进入步骤5，否则进入步骤6（jaykon:这里是不是错了？304时会进入6才对）
+      5：进入首次载入页面的7-8（jaykon:这里注意，就算此次请求manifest文件更新了，也只是在页面宣染完成后重新下载里面路径的文件，这些新文件要在下一次访问时才会体现出来，比如再次刷新时。）
+      6：使用本地存储，不重新请求
+-->
+<html manifest="./appcache/cache.appcache">
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="js/sort.js"></script>
+    </head>
+    <body>
+        <div>TODO write content</div>
+        <script>
+            var bOnline = navigator.onLine;
+            var doc = document;
+            if (bOnline) {
+
+            }
+            var a = [12, 43, 66, 34, 167, 87, 345, 964, 1];
+            var result = sort.quickSort(a);
+            console.log(result);
+        </script>
+    </body>
+</html>
