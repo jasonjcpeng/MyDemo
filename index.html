@@ -13,28 +13,5 @@ js的简化判断简化写法
     </head>
     <body>
         <div>TODO write content</div>
-        <script>
-            var xhr = new XMLHttpRequest();
-            xhr.onload = function(event){
-                if((xhr.status>=200 && xhr.status<300)||xhr.status===304){
-                    console.log(xhr.responseText);
-                }else{
-                    console.log("failed:"+xhr.status);
-                }
-            };
-            
-            xhr.open("get","practice/drag.html",false);
-            xhr.send(null);
-            xhr.abort();
-            xhr = null;
-            
-            function addUrl(url,name,value){
-                url += (url.indexOf("?")===-1)?"?":"&";
-                url += encodeURIComponent(name)+"="+encodeURIComponent(value);
-                return url;
-            };
-            
-            
-        </script>
     </body>
 </html>
