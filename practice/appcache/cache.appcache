@@ -1,0 +1,15 @@
+CACHE MANIFEST
+# 2016-02-05 v1.0.0
+# /demo.css
+# /demo.gif
+../js/sort.js
+
+NETWORK:
+#在此标题下列出的文件需要与服务器的连接，且不会被缓存
+*
+#index.html
+
+FALLBACK:
+#在此标题下列出的文件规定当页面无法访问时的回退页面（比如 404 页面）
+*
+#/practice/ ../404.html
