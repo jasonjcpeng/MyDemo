@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>TODO write content</div>
+        <script>
+            var xhr = new XMLHttpRequest();
+            xhr.onload = function(event){
+                if((xhr.status>=200 && xhr.status<300)||xhr.status===304){
+                    console.log(xhr.responseText);
+                }else{
+                    console.log("failed:"+xhr.status);
+                }
+            };
+            
+            xhr.open("get","practice/drag.html",false);
+            xhr.send(null);
+            xhr.abort();
+            xhr = null;
+            
+            function addUrl(url,name,value){
+                url += (url.indexOf("?")===-1)?"?":"&";
+                url += encodeURIComponent(name)+"="+encodeURIComponent(value);
+                return url;
+            };
+            
+        </script>
+    </body>
+</html>
