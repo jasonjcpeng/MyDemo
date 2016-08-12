@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="text/javascript" src="../KnockoutJS/knockout-3.4.0.js"></script>
+<div data-bind="foreach:{data:myValues,as:'value'}">
+    <h1><span data-bind="text:$index()+1"></span>:<span data-bind="text:value.one"></span></h1>
+</div>
+<script type="text/javascript">    var viewModel = {myValues: ko.observableArray()};
+viewModel.myValues([{'one':'111111'},{'one':'222222'},{'one':'3333333'}]);
+ko.applyBindings(viewModel);
+</script>
+</body>
+</html>
