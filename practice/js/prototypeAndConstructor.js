@@ -25,6 +25,7 @@
     //   }  
     // });
     //于是foo.prototyle.constructor === Object     故而需要重新覆盖constructor
+    //总而言之是为了使其正确回溯原型链
     bar.prototype.foo = "Hello world";
     bar.prototype.constructor = bar;
     var b = new bar();
