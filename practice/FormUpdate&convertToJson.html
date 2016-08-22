@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form id="form">
+    <input type="text" name="in"/>
+</form>
+<input form="form" name="out" type="tel"/>
+<button form="form" type="submit">提交</button>
+</body>
+<script>
+    $('#form').submit(function(event){
+        event.preventDefault();
+        console.log(event);
+        console.log($(this).serializeArray());
+        var t = $(this).serializeArray();
+        var d = {};
+        $.each(t,function(i,n){
+            d[n.name] = n.value;
+        });
+        console.log(d);
+        var Json = JSON.stringify(d);
+        console.log(Json);
+        console.log(JSON.parse(Json));
+    });
+</script>
+</html>
