@@ -16,7 +16,7 @@ require(['jquery','jquery-mobile'],function($,$M){
         }else{
             console.log('jquery加载失败！');
         }
-        $M?console.log('jquery加载完成！'):console.log('jquery加载失败！');
+        $M?console.log('jquery-Mobile加载完成！'):console.log('jquery-Mobile加载失败！');
     }catch(e){
         console.log(e);
     }

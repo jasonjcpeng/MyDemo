@@ -2,11 +2,48 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <title>Title</title>
     <link rel="stylesheet" href="../JqueryMobile/jquery.mobile-1.4.5.css">
     <script src="../requirejs/requirejs.js" data-main="./js/index" async="true" defer></script>
 </head>
 <body>
-
+<section  data-theme="a" data-role="page" id="firstView" data-title="第一个视图">
+    <header data-theme="a" data-role="header">第一个视图</header>
+    <article style="height: 1000px;" data-theme="c" data-role="content"><a href="#secondView" data-iconpos="right" data-icon="arrow-r"
+                                                   data-role="button" data-transition="fade">切换第二个视图</a></article>
+    <footer data-position="fixed" data-role="footer">
+        <nav data-role="navbar">
+            <ul>
+                <li><a href="#" class="ui-btn-active">主页</a></li>
+                <li><a href="#">个人</a></li>
+                <li><a href="#">系统</a></li>
+                <li><a href="#">设置</a></li>
+            </ul>
+        </nav>
+    </footer>
+</section>
+<section data-role="page" id="secondView" data-title="第二个视图">
+    <header data-role="header">第二个视图</header>
+    <article data-role="content"><a href="#firstView" data-transition="fade" data-icon="back" data-inline="true"
+                                    data-role="button" data-iconpos="notext">切换第一个视图</a>
+        <a data-role="button" href="#dialog" data-rel="dialog" data-transition="fade" data-icon="star"
+           data-iconpos="notext" data-inline="true" data-theme="d">第二个按钮</a>
+        <a data-role="button" data-transition="fade" data-icon="main" data-iconpos="notext" data-inline="true"
+           data-theme="c">第三个视图</a>
+    </article>
+    <footer data-role="footer">页脚</footer>
+</section>
+<section data-role="page" id="dialog" data-title="dialog">
+    <header style="height:40px;" data-role="header"><span style="float: right">弹出层</span></header>
+    <div data-role="controlgroup" data-type="horizontal" style="padding: 1%">
+        <a data-role="button" data-icon="forward" data-iconpos="notext"></a>
+        <a data-role="button" data-icon="home" data-iconpos="notext"></a>
+        <a data-role="button" data-icon="forward" data-iconpos="notext"></a>
+        <a data-role="button" data-icon="forward" data-iconpos="notext"></a>
+        <a data-role="button" data-icon="back" data-rel="back" data-iconpos="notext"></a>
+    </div>
+    <footer data-role="footer">页脚</footer>
+</section>
 </body>
 </html>
