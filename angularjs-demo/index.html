@@ -10,23 +10,42 @@
     <style>
     </style>
     <script src="../AngularJS/angular.min.js"></script>
+    <script src="./js/app.js"></script>
+    <style>
+        table {
+            border:2px solid #000000;
+            mso-cellspacing: 5px;
+        }
+        td{
+            border:2px solid #000000;
+            padding: 20px;
+        }
+    </style>
 </head>
-<body>
-<div ng-app="myapp" ng-controller="myctrl">
-    <form name="form">
-        <input type="email" name="email" ng-model="content" required/>
-    </form>
-    <h1>状态</h1>
-    {{form.email.$valid}}
+<body ng-app="myApp">
+<div ng-controller="FirstController">
+    <input type="text" ng-model="name"/>
+    <h1>{{name}}</h1>
+    <div>
+        <table>
+            <thead>
+            <td>name</td>
+            <td>age</td>
+            <td>addressCanEdit</td>
+            <td>address</td>
+            <td>option</td>
+            </thead>
+            <tbody>
+            <tr ng-repeat="item in person">
+                <td ng-bind="item.name"></td>
+                <td ng-bind="item.age"></td>
+                <td ng-bind="item.address" contenteditable="{{traggle}}"></td>
+                <td ng-bind="item.address" ></td>
+                <td ><input type="button" value="按钮" ng-click="person.click(item.name)"/></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
 </div>
-
-<>
-<script>
-    var app = angular.module('myapp',[]);
-    app.controller('myctrl',function($scope){
-        $scope.content='Jason';
-    });
-
-</script>
 </body>
 </html>
