@@ -2,6 +2,7 @@
 <project version="4">
   <component name="JavaScriptLibraryMappings">
     <file url="file://$PROJECT_DIR$/Node" libraries="{MyDemo/Node/node_modules}" />
+    <file url="file://$PROJECT_DIR$/npm-demo" libraries="{MyDemo/npm-demo/node_modules}" />
     <file url="PROJECT" libraries="{Jquery, angularjs-DefinitelyTyped, react-DefinitelyTyped}" />
     <includedPredefinedLibrary name="ECMAScript 6" />
   </component>

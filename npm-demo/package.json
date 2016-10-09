@@ -4,7 +4,8 @@
   "description": "测试npm",
   "main": "index.js",
   "dependencies": {
-    "bootstrap": "^3.3.7"
+    "bootstrap": "^3.3.7",
+    "react-bootstrap": "^0.30.3"
   },
   "devDependencies": {
     "gulp": "^3.9.1",
