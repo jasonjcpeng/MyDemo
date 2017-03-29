@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script type="text/javascript">
+    //JS的继承
+    // 给予构造函数的继承方式 原型与构造器继承 构造器负责完善原型链追溯
+    function A(name) {
+        this.name = name;
+        this.say = function (sth) {
+            alert(sth);
+        };
+    }
+
+    A.prototype.age = 13;
+
+    function B (sex){
+        this.sex = sex;
+    }
+    B.prototype = new A();
+    B.prototype.color = 'black';
+    B.prototype.constructor = B;
+    var b = new B('male');
+    console.log('b=');
+    console.log(b);
+    console.log('b.constructor.prototype=');
+    console.log(b.constructor.prototype);
+
+  //给予运行函数的继承方式  apply call 函数将直接运行  bind将只绑定this指针，此方式还多用于闭包
+    function fun(){
+        this.name = 'fun';
+        console.log(this.name);
+    }
+
+    function fun2(a,b){
+        this.name = 'fun2';
+        this.age = 'fun2Age';
+        console.log(this.name);
+    }
+    fun2.call(fun);
+    fun2.bind(fun)();
+</script>
+</body>
+</html>

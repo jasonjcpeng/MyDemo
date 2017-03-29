@@ -1,0 +1,19 @@
+{
+  "name": "react-demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo react-demo"
+  },
+  "author": "jc",
+  "license": "ISC",
+  "dependencies": {
+    "react": "^15.3.2",
+    "react-bootstrap": "^0.30.3",
+    "react-dom": "^15.3.2"
+  },
+  "devDependencies": {
+    "jsx-loader": "^0.13.2"
+  }
+}

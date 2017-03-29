@@ -1,0 +1,17 @@
+<component name="libraryTable">
+  <library name="Jquery" type="javaScript">
+    <properties>
+      <option name="frameworkName" value="jQuery" />
+      <sourceFilesUrls>
+        <item url="file://$PROJECT_DIR$/Jquery/jquery-1.12.4.js" />
+      </sourceFilesUrls>
+    </properties>
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/Jquery/jquery-1.12.4.js" />
+    </CLASSES>
+    <DOCUMENTATION>
+      <root url="http://api.jquery.com" />
+    </DOCUMENTATION>
+    <SOURCES />
+  </library>
+</component>

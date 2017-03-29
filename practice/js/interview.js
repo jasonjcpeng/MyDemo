@@ -10,15 +10,12 @@
 //变量提升
 (function () {
     var a = 1;
-
     function b() {
-
         if (!a) {
             var a = 10;
         }
         console.log(a);
     }
-
     b();
     //-------------------------------闭包
     var foo = function () {

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>KnockOutJS_Demo</title>
+</head>
+<style>
+    body {
+        font-family: arial;
+        font-size: 14px;
+    }
+
+    .liveExample{
+        padding: 1em;
+        background-color: #EEEEDD;
+        border: 1px solid #CCC;
+        max-width: 655px;
+    }
+
+    .liveExample input {
+        font-family: Arial;
+    }
+
+    .liveExample b {
+        font-weight: bold;
+    }
+
+    .liveExample p {
+        margin-top: 0.9em;
+        margin-bottom: 0.9em;
+    }
+
+    .liveExample select[multiple] {
+        width: 100%;
+        height: 8em;
+    }
+
+    .liveExample h2 {
+        margin-top: 0.4em;
+        font-weight: bold;
+        font-size: 1.2em;
+    }
+</style>
+<body>
+<script type="text/javascript" src="../KnockoutJS/knockout-3.4.0.js"></script>
+<section  class="liveExample">
+    <p>First Name:<input data-bind="value:firstName"/></p>
+    <p>Last Name:<input data-bind="value:lastName"/></p>
+    <h2>Hello,<span data-bind="text:fullName" ></span>!</h2>
+</section>
+<script type="text/javascript" src="./viewModel/index.js"></script>
+</body>
+</html>

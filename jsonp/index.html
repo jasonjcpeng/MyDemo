@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="result"></div>
+<script src="../Jquery/jquery-1.12.4.min.js"></script>
+<!-- JQuery包装ajax获取jsonp-->
+<!--<script>
+    (function(){
+        $.ajax({
+            type:'get',
+            url:'https://api.douban.com/v2/movie/search?tag=喜剧',
+            jsonp:'callback',
+            dataType:'jsonp',
+            success:function(data){
+                document.getElementById('result').innerHTML = JSON.stringify(data);
+            },
+            error:function(){
+                console.log('error');
+            }
+        });
+    })();
+</script>-->
+<!-- ------------- -->
+<!--手写获取jsonp数据-->
+<!--<script src="./jsonpRequest.js"></script>
+<script>
+    (function () {
+        var data = {'tag':'喜剧'};
+        Tools.getJsonp('https://api.douban.com/v2/movie/search?',data,function(data){
+            document.getElementById('result').innerHTML = JSON.stringify(data);
+        })
+    })();
+</script>-->
+<!-- ------------- -->
+</body>
+</html>

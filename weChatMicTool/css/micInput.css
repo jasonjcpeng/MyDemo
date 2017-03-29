@@ -1,0 +1,58 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+.micInput {
+    border-top: 2px solid #C3C3C3;
+    text-align: center;
+    padding-left: 15px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    background: #FAFAFF;
+    height: 50px;
+    width: 100%;
+    position: fixed;
+    bottom: 0px;
+}
+.press {
+    color: #737373;
+    font-weight: bold;
+    border-radius: 5px;
+    border: 1px solid #C3C3C3;
+    display: inline;
+    margin: 0 auto;
+    height: 50px;
+    width: 70%;
+    background: #FAFAFF;
+}
+.key {
+    border-radius: 50px;
+    border: 1px solid #C3C3C3;
+    float: left;
+    height: 50px;
+    width: 50px;
+    background: url("../src/key.png") no-repeat;
+    background-position: center;
+    margin: 0 auto;
+}
+.key:focus {
+    border-radius: 50px;
+    border: 1px solid #C3C3C3;
+    float: left;
+    height: 50px;
+    width: 50px;
+    margin: 0 auto;
+}
+.dropup {
+    border-radius: 20px;
+    height: 30%;
+    width: 50%;
+    background: rgba(125, 125, 125, 0.5);
+    background-position: center;
+    position: fixed;
+    left: 25%;
+    bottom: 25%;
+}
+.hidden{
+    display: none;
+}
